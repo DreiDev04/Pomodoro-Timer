@@ -5,7 +5,7 @@ export default function Navbar() {
   return (
     <nav className="nav-bar">
       <div className="nav-bar__logo">
-        <h1 className="title">Pomodoro Timer</h1>
+        <h1 className="title">Pomodoro</h1>
       </div>
       <div className="links">
         <div>

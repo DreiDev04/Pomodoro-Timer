@@ -1,0 +1,42 @@
+$color-dark: #222224;
+$color-dark-transparent: rgba(34, 34, 36, 0.582);
+$color-dark-bg: #33333a;
+$color-light: #f5f5f7;
+
+.modal{
+  background-color: $color-dark-transparent;
+}
+.modal-content {
+  border: none !important;
+  box-shadow: none !important;
+  box-sizing: content-box !important;
+  outline: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background-color: $color-dark-bg !important;
+}
+.modal-header {
+  background-color: $color-dark;
+  color: $color-light;
+  border: none !important;
+}
+.modal-title {
+  color: $color-light;
+
+}
+
+.modal-body {
+  background-color: $color-dark-bg;
+  padding: 20px;
+  
+
+}
+.modal-footer {
+  background-color: $color-dark-bg !important;
+  border: none !important;
+
+}
+.close {
+  color: #333;
+
+}

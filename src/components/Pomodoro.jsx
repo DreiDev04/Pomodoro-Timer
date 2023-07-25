@@ -49,6 +49,7 @@ export default function Pomodoro() {
     setIsPlaying(true);
     if (timerRef.current === null) {
       timerRef.current = setInterval(() => {
+        
         updateTimer();
       }, 1000);
     }
@@ -70,6 +71,7 @@ export default function Pomodoro() {
   const updateTimer = () => {
     setTimerLeft((prevTime) => {
       if (prevTime <= 0) {
+        console.log("Tpdate Time");
         playSound();
         handleShow();
         return 0;
@@ -81,6 +83,7 @@ export default function Pomodoro() {
 
   // Sound Functions
   const playSound = () => {
+    if (audioRef.current === null) return;
     audioRef.current.play();
   };
   const stopSound = () => {
@@ -148,9 +151,7 @@ export default function Pomodoro() {
 
   return (
     <div className="pomodoro">
-      <h1 className="title">
-      Pomodoro Timer
-      </h1>
+      <h1 className="title">Pomodoro Timer</h1>
       <Container className="focus">
         <div className="timer-container">
           <div className="timer-circle">
@@ -176,10 +177,10 @@ export default function Pomodoro() {
 
         <Row className="btn_container">
           <Col>
-            <Button variant="dark"
+            <Button
+              variant="dark"
               id="start_stop"
               onClick={isPlaying ? pauseTimer : startTimer}
-              
             >
               <FontAwesomeIcon
                 icon={`fa-solid fa-${isPlaying ? "pause" : "play"}`}
@@ -197,21 +198,37 @@ export default function Pomodoro() {
         <Row>
           <Col id="session-label">
             <h2>Session</h2>
-            <Button variant="dark" id="session-increment" onClick={incrementSession}>
+            <Button
+              variant="dark"
+              id="session-increment"
+              onClick={incrementSession}
+            >
               <FontAwesomeIcon icon="fa-solid fa-arrow-up" />
             </Button>
             <span id="session-length">{sessionLength}</span>
-            <Button variant="dark" id="session-decrement" onClick={decrementSession}>
+            <Button
+              variant="dark"
+              id="session-decrement"
+              onClick={decrementSession}
+            >
               <FontAwesomeIcon icon="fa-solid fa-arrow-down" />
             </Button>
           </Col>
           <Col id="break-label">
             <h2>Break</h2>
-            <Button variant="dark" id="break-increment" onClick={incrementBreak}>
+            <Button
+              variant="dark"
+              id="break-increment"
+              onClick={incrementBreak}
+            >
               <FontAwesomeIcon icon="fa-solid fa-arrow-up" />
             </Button>
             <span id="break-length">{breakLength}</span>
-            <Button variant="dark" id="break-decrement" onClick={decrementBreak}>
+            <Button
+              variant="dark"
+              id="break-decrement"
+              onClick={decrementBreak}
+            >
               <FontAwesomeIcon icon="fa-solid fa-arrow-down" />
             </Button>
           </Col>

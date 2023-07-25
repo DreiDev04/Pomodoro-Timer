@@ -237,7 +237,7 @@ export default function Pomodoro() {
 
       <audio ref={audioRef}>
         <source
-          src="./src/sounds/beep.wav"
+          src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"
           type="audio/wav"
           ref={audioRef}
           id="beep"
